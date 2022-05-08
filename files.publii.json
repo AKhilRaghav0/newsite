@@ -1,0 +1,322 @@
+[
+    {
+        "path": "404.html",
+        "type": "file",
+        "md5": "a877f0af406226f02f46fc0ebb3958b7"
+    },
+    {
+        "path": "assets",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/css",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/css/editor.css",
+        "type": "file",
+        "md5": "ab1a2743577e8ff738ce7d0ca4b488f0"
+    },
+    {
+        "path": "/assets/css/main.css",
+        "type": "file",
+        "md5": "01719c3de69dd48ad5a95e6346142684"
+    },
+    {
+        "path": "/assets/css/photoswipe.css",
+        "type": "file",
+        "md5": "4bc0765c90f13027146e376b21234a19"
+    },
+    {
+        "path": "/assets/css/style.css",
+        "type": "file",
+        "md5": "d753c1564dc63920bc2505474e7618f2"
+    },
+    {
+        "path": "assets/dynamic",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/js",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/js/photoswipe-ui-default.min.js",
+        "type": "file",
+        "md5": "d067f0883540b1ddda0e2c9ad1b14260"
+    },
+    {
+        "path": "/assets/js/photoswipe.min.js",
+        "type": "file",
+        "md5": "017385b552f7e0d979e2e2fe6f324015"
+    },
+    {
+        "path": "/assets/js/quicklink.umd.js",
+        "type": "file",
+        "md5": "81fe10ee7d67aefb93d57a5af679039d"
+    },
+    {
+        "path": "/assets/js/scripts.js",
+        "type": "file",
+        "md5": "56af31ebe4f40032ef058cdc9872e69d"
+    },
+    {
+        "path": "/assets/js/scripts.min.js",
+        "type": "file",
+        "md5": "abc27c3e08d71a131b1f492b23530a68"
+    },
+    {
+        "path": "/assets/js/svg-fix.js",
+        "type": "file",
+        "md5": "7c0d2bb7276904b382e80bf2d85e8a96"
+    },
+    {
+        "path": "/assets/js/svg-map.js",
+        "type": "file",
+        "md5": "3fffbb808639476373bb9456ec00bc60"
+    },
+    {
+        "path": "assets/svg",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/svg/bg-01.svg",
+        "type": "file",
+        "md5": "fa6db1e8eac249d05446193687acd55e"
+    },
+    {
+        "path": "/assets/svg/gallery-icons-dark.svg",
+        "type": "file",
+        "md5": "452594838e74a3df91ad4a20cf53c831"
+    },
+    {
+        "path": "/assets/svg/gallery-icons-light.svg",
+        "type": "file",
+        "md5": "ca77079e0fe8270a7447d7f1f5d543b0"
+    },
+    {
+        "path": "/assets/svg/svg-map.svg",
+        "type": "file",
+        "md5": "83546e415354cb55f493a08855a79499"
+    },
+    {
+        "path": "authors",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "authors/akhil-raghav",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/akhil-raghav/index.html",
+        "type": "file",
+        "md5": "c82544647689ec40f35fbb4e47d0be0c"
+    },
+    {
+        "path": "chroot-linuxdevuan-on-android-for-arm64-devices",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/chroot-linuxdevuan-on-android-for-arm64-devices/index.html",
+        "type": "file",
+        "md5": "8d5da039de462682b5e7311cd1b4955c"
+    },
+    {
+        "path": "index.html",
+        "type": "file",
+        "md5": "7b776ae702be039e483a08a464e26a25"
+    },
+    {
+        "path": "media",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/1",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/Screenshot-from-2022-04-20-09-47-24.png",
+        "type": "file",
+        "md5": "55a2a75ffb44e780b61402347db805d7"
+    },
+    {
+        "path": "media/posts/1/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-lg.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-md.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-sm.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xl.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xs.png",
+        "type": "file",
+        "md5": "ab1d3341cfdd0c5b7c7c45164184083d"
+    },
+    {
+        "path": "media/posts/2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/2/Screenshot-from-2022-04-25-11-47-02.png",
+        "type": "file",
+        "md5": "d7a3a3279dc84d3fc3373262cb338556"
+    },
+    {
+        "path": "media/posts/2/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/2/responsive/Screenshot-from-2022-04-25-11-47-02-lg.png",
+        "type": "file",
+        "md5": "a1aefafe7d2f6d8517c631333ec798f6"
+    },
+    {
+        "path": "/media/posts/2/responsive/Screenshot-from-2022-04-25-11-47-02-md.png",
+        "type": "file",
+        "md5": "1580018b1f296106c75a6d4c70fdda64"
+    },
+    {
+        "path": "/media/posts/2/responsive/Screenshot-from-2022-04-25-11-47-02-sm.png",
+        "type": "file",
+        "md5": "c882fb20f7820e5ed3e446cf03ba7d15"
+    },
+    {
+        "path": "/media/posts/2/responsive/Screenshot-from-2022-04-25-11-47-02-xl.png",
+        "type": "file",
+        "md5": "fee5ce961f5695172271cffca321c982"
+    },
+    {
+        "path": "/media/posts/2/responsive/Screenshot-from-2022-04-25-11-47-02-xs.png",
+        "type": "file",
+        "md5": "10906fbbe4a13ca6efab102fc1bc2945"
+    },
+    {
+        "path": "media/posts/5",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/5/Screenshot-from-2022-04-26-08-18-48.png",
+        "type": "file",
+        "md5": "a855723d67d6076359c7fb43596993bf"
+    },
+    {
+        "path": "media/posts/5/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-lg.png",
+        "type": "file",
+        "md5": "b3e4105ef4d54faadd94a3ac12009330"
+    },
+    {
+        "path": "/media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-md.png",
+        "type": "file",
+        "md5": "85a47a4d7374e59c433647011c88a1aa"
+    },
+    {
+        "path": "/media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-sm.png",
+        "type": "file",
+        "md5": "f91963e0eb71ac93bdf56de87e68e033"
+    },
+    {
+        "path": "/media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-xl.png",
+        "type": "file",
+        "md5": "5584d75ac20c7a528be51f6c8fd8314a"
+    },
+    {
+        "path": "/media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-xs.png",
+        "type": "file",
+        "md5": "da431ce9298f4cee0b3baeafff1766b8"
+    },
+    {
+        "path": "robots.txt",
+        "type": "file",
+        "md5": "50d8a018e8ae96732c8a2ba663c61d4e"
+    },
+    {
+        "path": "ssh",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/ssh/index.html",
+        "type": "file",
+        "md5": "6802004ac54138d0933dded8cf49952b"
+    },
+    {
+        "path": "tags",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/index.html",
+        "type": "file",
+        "md5": "df7d6af9a4beaafac69cf80169511edd"
+    },
+    {
+        "path": "tags/terminal",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/terminal/index.html",
+        "type": "file",
+        "md5": "69fc394e1c5f3b11fbfdd8a52a937c1c"
+    },
+    {
+        "path": "tags/tmux",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/tmux/index.html",
+        "type": "file",
+        "md5": "5840ad3d44a44bb4ac893970d2c8c8d2"
+    },
+    {
+        "path": "tmux-shortcuts-and-cheatsheet-2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tmux-shortcuts-and-cheatsheet-2/index.html",
+        "type": "file",
+        "md5": "4d4cd715214ca8e9f31e3fab97b69d44"
+    }
+]

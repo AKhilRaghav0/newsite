@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chroot Linux(devuan) on Android (for ARM64 devices) - Akhil Raghav</title><meta name="description" content="Tested on: YU Yureka Black (with android 11 custom rom and GSI )Requirements. Rooted Android device. Busybox installed. I recommend&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="./../chroot-linuxdevuan-on-android-for-arm64-devices/"><link rel="stylesheet" href="./../assets/css/style.css?v=d753c1564dc63920bc2505474e7618f2"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"./../chroot-linuxdevuan-on-android-for-arm64-devices/index.html"},"headline":"Chroot Linux(devuan) on Android (for ARM64 devices)","datePublished":"2022-04-21T08:39","dateModified":"2022-04-25T10:15","image":{"@type":"ImageObject","url":"./../media/posts/1/Screenshot-from-2022-04-20-09-47-24.png","height":275,"width":545},"description":"Tested on: YU Yureka Black (with android 11 custom rom and GSI )Requirements. Rooted Android device. Busybox installed. I recommend&hellip;","author":{"@type":"Person","name":"Akhil Raghav","url":"./../authors/akhil-raghav/"},"publisher":{"@type":"Organization","name":"Akhil Raghav"}}</script></head><body class="lines"><div class="container lines lines--right"><header class="header"><a href="./../index.html" class="logo">Akhil Raghav</a><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu">Menu</button><ul class="navbar__menu"></ul></nav></header><main class="main"><article class="post"><figure class="post__featured-image"><div class="post__featured-image__inner is-img-loading"><img src="./../media/posts/1/Screenshot-from-2022-04-20-09-47-24.png" srcset="./../media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xs.png 384w, ./../media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-sm.png 600w, ./../media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-md.png 768w, ./../media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-lg.png 1200w, ./../media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xl.png 1600w" sizes="(min-width: 37.5em) 1600px, 80vw" loading="eager" height="275" width="545" alt=""></div><figcaption>Devuan on Android</figcaption></figure><header class="post__inner post__header"><h1 class="post__title">Chroot Linux(devuan) on Android (for ARM64 devices)</h1><div class="post__meta"><div class="post__meta__left"><a href="./../authors/akhil-raghav/index.html" class="invert post__author" rel="author" title="Akhil Raghav">Akhil Raghav</a></div><div class="post__meta__right"><time datetime="2022-04-21T08:39" class="post__date">April 21, 2022</time><div class="post__updated">Updated on <time datetime="2022-04-21T08:39" class="post__date">April 25, 2022</time></div></div></div></header><div class="post__inner"><div class="post__entry"><h2 id="tested-on">Tested on:</h2><ol><li>YU Yureka Black (with android 11 custom rom and GSI )<h2 id="requirements">Requirements.</h2></li><li>Rooted Android device.</li><li>Busybox installed. I recommend “<a href="https://play.google.com/store/apps/details?id=stericson.busybox&amp;hl=en&amp;gl=US">Busybox</a>“ app by Stephen (Stericson).</li><li>A terminal for Android. For example “<a href="https://github.com/termux/termux-app/releases/tag/v0.118.0">Termux</a>“ app or “Terminal Emulator for Android” app or Default local terminal by lineage. [or <a href="https://developer.android.com/studio/command-line/adb">ADB</a> shell with root access]</li><li>“<a href="https://play.google.com/store/apps/details?id=x.org.server&amp;hl=en&amp;gl=US">XSDL XServer</a>“ app.</li><li>ARM64 Maemo Leste image(based on debian). This tutorial use maemo-leste-1.0-arm64-raspi3-20200114.tar.gz, the latest image downloaded from <a href="https://maedevu.maemo.org/images/arm64-generic/">https://maedevu.maemo.org/images/arm64-generic/</a><h2 id="steps-to-install">Steps to install.</h2><h3 id="1-extracting-the-image">1. Extracting the image.</h3></li><li>Open a terminal for Android.</li><li><pre><code>su
+</code></pre></li><li><pre><code>cd /sdcard
+</code></pre></li><li><pre><code>wget https://maedevu.maemo.org/images/arm64-generic/20200114/maemo-leste-1.0-arm64-raspi3-20200114.tar.gz
+</code></pre></li><li><pre><code>mkdir /data/local/leste
+</code></pre></li><li><pre><code>busybox tar xvzf /sdcard/maemo-leste-1.0-arm64-raspi3-20200114.tar.gz -C /data/local/leste
+</code></pre></li><li><pre><code>cd /data/local/leste
+</code></pre></li><li>If you want to mount the internal memory of Android (warning: it is not recommended because linux writes logs in storage so it kills R/W cycle), you can: mkdir sdcard<h3 id="2-chrooting-devuan">2. Chrooting Devuan.</h3></li><li><pre><code>wget https://raw.githubusercontent.com/AKhilRaghav0/debain_on_android/origin/chroot.sh
+</code></pre></li><li><pre><code>sh chroot.sh
+</code></pre><h3 id="3-configuring-usable-internet">3. Configuring usable Internet.</h3></li><li><pre><code>echo nameserver 8.8.8.8 &gt; /etc/resolv.conf
+</code></pre></li><li><pre><code>echo 127.0.0.1  localhost &gt; /etc/hosts
+</code></pre></li><li><pre><code>echo aid_inet:x:3003:user,root,_apt &gt;&gt; /etc/group
+</code></pre></li><li><pre><code>echo aid_net_raw:x:3004:user,root,_apt &gt;&gt; /etc/group
+</code></pre></li><li><pre><code>echo aid_admin:x:3005:user,root,_apt &gt;&gt; /etc/group
+</code></pre></li><li><pre><code>usermod -g 3003 _apt
+</code></pre></li><li><pre><code>exit
+</code></pre></li><li><pre><code>sh chroot.sh
+</code></pre><h3 id="4-upgrading-maemo-leste-ascii-to-maemo-leste-bewoulf">4. Upgrading Maemo Leste Ascii to Maemo Leste Bewoulf.</h3></li><li><pre><code>apt update
+</code></pre></li><li><pre><code>apt upgrade
+</code></pre></li><li><pre><code>rm -R /etc/apt/sources.list.d
+</code></pre></li><li><pre><code>echo deb http://pkgmaster.devuan.org/merged beowulf main contrib non-free &gt; /etc/apt/sources.list
+</code></pre></li><li><pre><code>echo deb http://pkgmaster.devuan.org/merged beowulf-updates main contrib non-free &gt;&gt; /etc/apt/sources.list
+</code></pre></li><li><pre><code>echo deb http://pkgmaster.devuan.org/merged beowulf-security main contrib non-free &gt;&gt; /etc/apt/sources.list
+</code></pre></li><li><pre><code>echo deb http://maedevu.maemo.org/leste beowulf main contrib non-free &gt;&gt; /etc/apt/sources.list
+</code></pre></li><li><pre><code>apt update
+</code></pre></li><li><pre><code>apt upgrade
+</code></pre></li><li>We got an error: “unmet dependencies” related with “theme-default-settings-mr0”. To solve:<ul><li><pre><code>dpkg -r --force-depends theme-default-settings-mr0
+</code></pre></li></ul></li><li><pre><code>apt upgrade
+</code></pre></li><li><pre><code>apt --fix-broken install
+</code></pre></li><li>Ignore error about processing “openrc”.<ul><li><pre><code>apt update
+</code></pre></li><li><pre><code>apt upgrade
+</code></pre></li></ul></li><li>Choose your keyboard layout. Choose “yes” when you are asked about restarting services.</li><li>You will get error about: exim4-config, exim4-base,exim4-daemon-light. To solve:<ul><li><pre><code>apt purge exim4-config exim4-base exim4-daemon-light
+</code></pre></li></ul></li><li>It is possible Internet not working after upgrading. To solve, again:<ul><li><pre><code>echo nameserver 8.8.8.8 &gt; /etc/resolv.conf
+</code></pre></li></ul></li><li><pre><code>rm -R /etc/apt/sources.list.d
+</code></pre></li><li><pre><code>apt update
+</code></pre></li><li><pre><code>apt dist-upgrade
+</code></pre></li><li>Choose “Y” when you are asked.</li><li><pre><code>apt update
+</code></pre></li><li><pre><code>apt upgrade
+</code></pre></li><li>No more errors should be displayed. We ensure that some necessary applications are installed:<ul><li><pre><code>apt install clock-ui alarmd applet-datetime hildon-base
+</code></pre><h3 id="5-launching-devuan-gui-hildon">5. Launching Devuan GUI: Hildon.</h3></li></ul></li><li><pre><code>wget https://raw.githubusercontent.com/AKhilRaghav0/debain_on_android/origin/launch_gui.sh /
+</code></pre></li><li>Open “XSDL XServer” Android app in landscape mode or portrait mode.</li><li><pre><code>sh /launch_gui.sh
+</code></pre></li><li>Devuan is started. Now you can open and install apps using osso-xterm. Audio should work too. You can install chromium or firefox-esr, browse to youtube and check if audio works.<h3 id="6-enabling-hildon-application-manager-installing-dummy-network">6. Enabling Hildon application manager: installing “dummy network”</h3></li><li>From osso-xterm:<ul><li><pre><code>apt install libicd-network-dummy
+</code></pre></li><li><pre><code>gconftool-2 -s -t string /system/osso/connectivity/IAP/DUMMY/type DUMMY
+</code></pre></li><li><pre><code>gconftool-2 -s -t string /system/osso/connectivity/IAP/DUMMY/name &#39;Dummy network&#39;
+</code></pre></li><li><pre><code>gconftool-2 -s -t boolean /system/osso/connectivity/IAP/DUMMY/autoconnect true
+</code></pre></li><li><pre><code>/etc/init.d/icd2 start -D
+</code></pre></li></ul></li><li>Restart Devuan (repeat this steps every time you can restart Maemo Leste).</li></ol><ul><li>Close “XSDL XServer” app.</li><li>From terminal of Android: exit sh chroot.sh</li><li>Open “XSDL XServer” app.</li><li>From terminal of Android: sh /launch.sh</li></ul><ol start="3"><li>Go to settings &gt; internet connections &gt; connections. Check “Dummy network” is there.</li><li>Select the “Dummy network” connection. Go to time (top left of the screen) &gt; Internet connection &gt; Dummy network. 5- Now you can install apps using Hildon Application Manager.<h2 id="extra-notes">Extra notes.</h2></li><li>It is possible there is errors about needed publick keys. In that case we’ll get all public keys (.asc files) from <a href="https://maedevu.maemo.org">https://maedevu.maemo.org</a>:<ul><li><pre><code>wget -O - https://maedevu.maemo.org/testing-key.asc | apt-key add -
+</code></pre></li><li><pre><code>wget -O - https://maedevu.maemo.org/testing-key-exp.asc | apt-key add -
+</code></pre></li><li><pre><code>wget -O - https://maedevu.maemo.org/extras-key.asc | apt-key add -
+</code></pre></li></ul></li><li>“Apt update” may freeze during installing “gconf2”. The reason is that XSDL Xserver is open. You must close the application and the update will continue.</li><li>Increase DPI in apps:<ul><li><pre><code>echo export GDK_DPI_SCALE=20 &gt;&gt; /root/.bashrc
+</code></pre></li><li><pre><code>echo export QT_SCALE_FACTOR=22.5 &gt;&gt; /root/.bashrc
+</code></pre></li></ul></li><li>Add path to installed games:<ul><li><pre><code>echo export PATH=/usr/games:$PATH &gt;&gt; /root/.bashrc
+</code></pre></li></ul></li></ol></div><footer class="post__footer"><div class="post__tag-share"><div class="post__share"></div></div></footer></div></article></main><footer class="footer"><div class="footer__left"><div class="footer__copy">Akhil Raghav</div></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg><use xlink:href="./../assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = { mobileMenuMode: 'sidebar', animationSpeed: 300, submenuWidth: 'auto', doubleClickTime: 500, mobileMenuExpandableSubmenus: true, relatedContainerForOverlayMenuSelector: '.navbar', };</script><script defer="defer" src="./../assets/js/scripts.min.js?v=abc27c3e08d71a131b1f492b23530a68"></script><script>function publiiDetectLoadedImages () {
+         var images = document.querySelectorAll('img[loading]:not(.is-loaded)');
+         for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+               images[i].classList.add('is-loaded');
+               images[i].parentNode.classList.remove('is-img-loading');
+            } else {
+               images[i].addEventListener('load', function () {
+                  this.classList.add('is-loaded');
+                  this.parentNode.classList.remove('is-img-loading');
+               }, false);
+            }
+         }
+      }
+      publiiDetectLoadedImages();</script><script defer="defer" src="./../assets/js/quicklink.umd.js?v=81fe10ee7d67aefb93d57a5af679039d"></script><script>window.addEventListener('load', () =>{
+      quicklink.listen();
+      });</script></body></html>

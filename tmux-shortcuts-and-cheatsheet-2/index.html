@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tmux shortcuts &amp; Cheatsheet - Akhil Raghav</title><meta name="description" content="# Tmux shortcuts &amp; cheatsheet start new: tmux start new with session name: tmux new -s myname attach: tmux a&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="./../tmux-shortcuts-and-cheatsheet-2/"><link rel="stylesheet" href="./../assets/css/style.css?v=d753c1564dc63920bc2505474e7618f2"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"./../tmux-shortcuts-and-cheatsheet-2/index.html"},"headline":"Tmux shortcuts & Cheatsheet","datePublished":"2022-04-26T08:45","dateModified":"2022-04-26T08:47","image":{"@type":"ImageObject","url":"./../media/posts/5/Screenshot-from-2022-04-26-08-18-48.png","height":1093,"width":2044},"description":"# Tmux shortcuts &amp; cheatsheet start new: tmux start new with session name: tmux new -s myname attach: tmux a&hellip;","author":{"@type":"Person","name":"Akhil Raghav","url":"./../authors/akhil-raghav/"},"publisher":{"@type":"Organization","name":"Akhil Raghav"}}</script></head><body class="lines"><div class="container lines lines--right"><header class="header"><a href="./../index.html" class="logo">Akhil Raghav</a><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu">Menu</button><ul class="navbar__menu"></ul></nav></header><main class="main"><article class="post"><figure class="post__featured-image post__featured-image--full"><div class="post__featured-image__inner is-img-loading"><img src="./../media/posts/5/Screenshot-from-2022-04-26-08-18-48.png" srcset="./../media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-xs.png 384w, ./../media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-sm.png 600w, ./../media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-md.png 768w, ./../media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-lg.png 1200w, ./../media/posts/5/responsive/Screenshot-from-2022-04-26-08-18-48-xl.png 1600w" sizes="(min-width: 37.5em) 1600px, 80vw" loading="eager" height="1093" width="2044" alt=""></div></figure><header class="post__inner post__header"><h1 class="post__title">Tmux shortcuts &amp; Cheatsheet</h1><div class="post__meta"><div class="post__meta__left"><a href="./../authors/akhil-raghav/index.html" class="invert post__author" rel="author" title="Akhil Raghav">Akhil Raghav</a></div><div class="post__meta__right"><time datetime="2022-04-26T08:45" class="post__date">April 26, 2022</time><div class="post__updated">Updated on <time datetime="2022-04-26T08:45" class="post__date">April 26, 2022</time></div></div></div></header><div class="post__inner"><div class="post__entry"><h1 dir="auto" data-sourcepos="1:1-1:29"># Tmux shortcuts &amp; cheatsheet </h1><p dir="auto" data-sourcepos="3:1-3:10">start new:</p><pre data-sourcepos="5:5-6:0"><code>tmux
+</code></pre><p dir="auto" data-sourcepos="7:1-7:28">start new with session name:</p><pre data-sourcepos="9:5-10:0"><code>tmux new -s myname
+</code></pre><p dir="auto" data-sourcepos="11:1-11:7">attach:</p><pre data-sourcepos="13:5-14:0"><code>tmux a  #  (or at, or attach)
+</code></pre><p dir="auto" data-sourcepos="15:1-15:16">attach to named:</p><pre data-sourcepos="17:5-18:0"><code>tmux a -t myname
+</code></pre><p dir="auto" data-sourcepos="19:1-19:14">list sessions:</p><pre data-sourcepos="21:5-22:0"><code>tmux ls
+</code></pre><p dir="auto" data-sourcepos="23:1-23:40"><a name="user-content-killsessions"></a>kill session:</p><pre data-sourcepos="25:5-26:0"><code>tmux kill-session -t myname
+</code></pre><p dir="auto" data-sourcepos="27:1-27:57"><a name="user-content-killallsessions"></a>Kill all the tmux sessions:</p><pre data-sourcepos="29:5-30:0"><code>tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+</code></pre><p dir="auto" data-sourcepos="31:1-31:73">In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:</p><h2 dir="auto" data-sourcepos="33:1-33:21"> </h2><h2 dir="auto" data-sourcepos="33:1-33:21">List all shortcuts</h2><p dir="auto" data-sourcepos="34:1-34:101">to see all the shortcuts keys in tmux simply use the <code>bind-key ?</code> in my case that would be <code>CTRL-B ?</code></p><h2 dir="auto" data-sourcepos="36:1-36:11"> </h2><h2 dir="auto" data-sourcepos="36:1-36:11">Sessions</h2><pre data-sourcepos="38:5-41:0"><code>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+</code></pre><h2 dir="auto" data-sourcepos="42:1-42:43"> </h2><h2 dir="auto" data-sourcepos="42:1-42:43"><a name="user-content-windowstabs"></a>Windows (tabs)</h2><pre data-sourcepos="44:5-51:0"><code>c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;  kill window
+</code></pre><h2 dir="auto" data-sourcepos="52:1-52:43"> </h2><h2 dir="auto" data-sourcepos="52:1-52:43"><a name="user-content-panessplits"></a>Panes (splits)</h2><pre data-sourcepos="54:5-67:0"><code>%  vertical split
+"  horizontal split
+
+o  swap panes
+q  show pane numbers
+x  kill pane
++  break pane into window (e.g. to select text by mouse to copy)
+-  restore pane from window
+⍽  space - toggle between layouts
+&lt;prefix&gt; q (Show pane numbers, when the numbers show up type the key to goto that pane)
+&lt;prefix&gt; { (Move the current pane left)
+&lt;prefix&gt; } (Move the current pane right)
+&lt;prefix&gt; z toggle pane zoom
+</code></pre><h2 dir="auto" data-sourcepos="68:1-68:37"> </h2><h2 dir="auto" data-sourcepos="68:1-68:37"><a name="user-content-syncpanes"></a>Sync Panes</h2><p dir="auto" data-sourcepos="70:1-70:169">You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p><pre data-sourcepos="72:1-74:3"><code>:setw synchronize-panes
+</code></pre><p dir="auto" data-sourcepos="76:1-76:338">You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/" rel="nofollow">tip source</a></p><h2 dir="auto" data-sourcepos="79:1-79:17"> </h2><h2 dir="auto" data-sourcepos="79:1-79:17">Resizing Panes</h2><p dir="auto" data-sourcepos="81:1-81:178">You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p><pre data-sourcepos="83:5-94:4"><code>PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+</code></pre><h2 dir="auto" data-sourcepos="95:1-95:13"> </h2><h2 dir="auto" data-sourcepos="95:1-95:13">Copy mode:</h2><p dir="auto" data-sourcepos="97:1-97:395">Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p><pre data-sourcepos="99:5-100:0"><code>setw -g mode-keys vi
+</code></pre><p dir="auto" data-sourcepos="101:1-101:74">With this option set, we can use h, j, k, and l to move around our buffer.</p><p dir="auto" data-sourcepos="103:1-103:213">To get out of Copy mode, we just press the ENTER key. Moving around one character at a time isn’t very efficient. Since we enabled vi mode, we can also use some other visible shortcuts to move around the buffer.</p><p dir="auto" data-sourcepos="105:1-105:213">For example, we can use "w" to jump to the next word and "b" to jump back one word. And we can use "f", followed by any character, to jump to that character on the same line, and "F" to jump backwards on the line.</p><pre data-sourcepos="107:5-138:0"><code>   Function                vi             emacs
+   Back to indentation     ^              M-m
+   Clear selection         Escape         C-g
+   Copy selection          Enter          M-w
+   Cursor down             j              Down
+   Cursor left             h              Left
+   Cursor right            l              Right
+   Cursor to bottom line   L
+   Cursor to middle line   M              M-r
+   Cursor to top line      H              M-R
+   Cursor up               k              Up
+   Delete entire line      d              C-u
+   Delete to end of line   D              C-k
+   End of line             $              C-e
+   Goto line               :              g
+   Half page down          C-d            M-Down
+   Half page up            C-u            M-Up
+   Next page               C-f            Page down
+   Next word               w              M-f
+   Paste buffer            p              C-y
+   Previous page           C-b            Page up
+   Previous word           b              M-b
+   Quit mode               q              Escape
+   Scroll down             C-Down or J    C-Down
+   Scroll up               C-Up or K      C-Up
+   Search again            n              n
+   Search backward         ?              C-r
+   Search forward          /              C-s
+   Start of line           0              C-a
+   Start selection         Space          C-Space
+   Transpose chars                        C-t
+</code></pre><h2 dir="auto" data-sourcepos="139:1-139:7"> </h2><h2 dir="auto" data-sourcepos="139:1-139:7">Misc</h2><pre data-sourcepos="141:5-145:0"><code>d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+</code></pre><h2 dir="auto" data-sourcepos="146:1-146:26"> </h2><h2 dir="auto" data-sourcepos="146:1-146:26">Configurations Options:</h2><pre data-sourcepos="148:5-168:0"><code># Mouse support - set to on if you want to use the mouse
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal "screen-256color"
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Maximize and restore a pane
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</code></pre><h2 dir="auto" data-sourcepos="169:1-169:13"> </h2><h2 dir="auto" data-sourcepos="169:1-169:13">Resources:</h2><ul dir="auto" data-sourcepos="171:1-173:0"><li data-sourcepos="171:1-171:81"><a href="http://pragprog.com/book/bhtmux/tmux" rel="nofollow">tmux: Productive Mouse-Free Development</a></li><li data-sourcepos="172:1-173:0"><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows" rel="nofollow">How to reorder windows</a></li></ul></div><footer class="post__footer"><div class="post__tag-share"><div class="post__tag"><h3 class="post__tag__title">Posted in</h3><ul class="post__tag__list"><li><a href="./../tags/terminal/index.html">terminal</a></li><li><a href="./../tags/tmux/index.html">tmux</a></li></ul></div><div class="post__share"></div></div></footer></div></article></main><footer class="footer"><div class="footer__left"><div class="footer__copy">Akhil Raghav</div></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg><use xlink:href="./../assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = { mobileMenuMode: 'sidebar', animationSpeed: 300, submenuWidth: 'auto', doubleClickTime: 500, mobileMenuExpandableSubmenus: true, relatedContainerForOverlayMenuSelector: '.navbar', };</script><script defer="defer" src="./../assets/js/scripts.min.js?v=abc27c3e08d71a131b1f492b23530a68"></script><script>function publiiDetectLoadedImages () {
+         var images = document.querySelectorAll('img[loading]:not(.is-loaded)');
+         for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+               images[i].classList.add('is-loaded');
+               images[i].parentNode.classList.remove('is-img-loading');
+            } else {
+               images[i].addEventListener('load', function () {
+                  this.classList.add('is-loaded');
+                  this.parentNode.classList.remove('is-img-loading');
+               }, false);
+            }
+         }
+      }
+      publiiDetectLoadedImages();</script><script defer="defer" src="./../assets/js/quicklink.umd.js?v=81fe10ee7d67aefb93d57a5af679039d"></script><script>window.addEventListener('load', () =>{
+      quicklink.listen();
+      });</script></body></html>
